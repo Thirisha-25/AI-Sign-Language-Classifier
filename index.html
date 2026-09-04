@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Image Classifier</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+
+    <!-- Teachable Machine Image Library -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5/dist/teachablemachine-image.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ================= HEADER ================= -->
+
+        <h1>AI Image Classifier</h1>
+
+        <p class="subtitle">
+            Sign Language Recognition
+        </p>
+
+        <p class="description">
+            Recognizes sign language letters from A to Z using AI.
+        </p>
+
+
+        <!-- ================= CAMERA SECTION ================= -->
+
+        <div class="card camera-section">
+
+            <h2>📷 Camera</h2>
+
+            <div id="webcam-container">
+
+                <p class="camera-message">
+                    Click "Start Camera" to open your webcam.
+                </p>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="buttons">
+
+                <button id="startCameraBtn" onclick="startCamera()">
+
+                    Start Camera
+
+                </button>
+
+
+                <button id="startPredictionBtn" onclick="startPrediction()" disabled>
+
+                    Start Prediction
+
+                </button>
+
+
+                <button id="stopCameraBtn" onclick="stopCamera()" disabled>
+
+                    Stop Camera
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PREDICTION SECTION ================= -->
+
+        <div class="card prediction-section">
+
+            <h2>🔍 Prediction</h2>
+
+            <div id="prediction">
+
+                <p>
+                    Start the camera to begin.
+                </p>
+
+            </div>
+
+
+            <!-- Confidence -->
+
+            <div class="confidence-container">
+
+                <div class="confidence-label">
+
+                    <span>
+                        Confidence
+                    </span>
+
+                    <span id="confidence-text">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div id="confidence-bar"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= HISTORY SECTION ================= -->
+
+        <div class="card history-section">
+
+            <h2>📋 Prediction History</h2>
+
+            <ul id="history">
+
+                <li>
+                    No predictions yet.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <!-- This MUST come after TensorFlow.js and Teachable Machine -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
