@@ -116,8 +116,8 @@ async function startCamera() {
         // ==================================
 
         webcam = new tmImage.Webcam(
-            400,
-            400,
+            300,
+            300,
             true
         );
 
